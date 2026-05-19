@@ -1,4 +1,4 @@
-import api from "./axios";
+import api from "../../axios";
 import { useState, useEffect } from "react";
 import { OrderSummary } from "./OrderSummary";
 import { PaymentSummary } from "./PaymentSummary";

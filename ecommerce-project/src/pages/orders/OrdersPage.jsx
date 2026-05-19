@@ -1,4 +1,4 @@
-import api from "./axios";
+import api from "../../axios";
 import dayjs from "dayjs";
 import { useState, useEffect, Fragment } from "react";
 import { Header } from "../../components/Header";
