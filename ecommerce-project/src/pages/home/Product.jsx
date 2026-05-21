@@ -4,13 +4,23 @@ import { formatMoney } from "../../utils/money";
 
 export function Product({ product, loadCart }) {
   const [quantity, setQuantity] = useState(1);
-
+  const [showAddedMessage, setShowAddedMessage] = useState(false);
   const addToCart = async () => {
     await api.post("/api/cart-items", {
       productId: product.id,
       quantity,
     });
     await loadCart();
+
+    addedMessage();
+  };
+
+  const addedMessage = () => {
+    setShowAddedMessage(true);
+
+    setTimeout(() => {
+      setShowAddedMessage(false);
+    }, 3000);
   };
 
   const selectQuantity = (event) => {
@@ -60,7 +70,7 @@ export function Product({ product, loadCart }) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart">
+      <div className={`added-to-cart ${showAddedMessage ? "visible" : ""}`}>
         <img src="images/icons/checkmark.png" />
         Added
       </div>
