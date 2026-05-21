@@ -143,9 +143,6 @@
      opacity and make it visible. */
   opacity: 0;
 }
-.added-to-cart.visible {
-  opacity: 1;
-}
 
 .home-page .added-to-cart img {
   height: 19px;

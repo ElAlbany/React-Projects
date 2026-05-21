@@ -70,7 +70,10 @@ export function Product({ product, loadCart }) {
 
       <div className="product-spacer"></div>
 
-      <div className={`added-to-cart ${showAddedMessage ? "visible" : ""}`}>
+      <div
+        className="added-to-cart"
+        style={{ opacity: showAddedMessage ? 1 : 0 }}
+      >
         <img src="images/icons/checkmark.png" />
         Added
       </div>
